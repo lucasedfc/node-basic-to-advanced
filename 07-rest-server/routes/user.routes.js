@@ -4,14 +4,13 @@ const {
   userPost,
   userPut,
   userDelete,
-  userPatch,
 } = require('../controllers/user.controller');
+const { CreateUserDto, UpdateUserDto, ListUserDto, DeleteUserDto } = require('../helpers/user.dto');
 const router = Router();
 
-router.get('/', userGet);
-router.post('/', userPost);
-router.put('/:id', userPut);
-router.delete('/:id', userDelete);
-router.patch('/', userPatch);
+router.get('/', ListUserDto(), userGet);
+router.post('/', CreateUserDto(), userPost);
+router.put('/:id', UpdateUserDto(), userPut);
+router.delete('/:id', DeleteUserDto(), userDelete);
 
 module.exports = router;
