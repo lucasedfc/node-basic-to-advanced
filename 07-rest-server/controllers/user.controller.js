@@ -52,11 +52,12 @@ const userDelete = async (req, res) => {
 
   // delete physical
   // const user = await User.findByIdAndDelete(id);
+
   
   const user = await User.findByIdAndUpdate(id, {status: false}, { new: true })
   res.json({
     message: 'DELETE API Controller',
-    user
+    user,
   });
 };
 
