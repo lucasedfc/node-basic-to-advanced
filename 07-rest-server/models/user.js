@@ -31,6 +31,8 @@ const UserSchema = Schema({
   role: {
     type: String,
     required: [true, 'role is required'],
+    default: 'USER_ROLE', 
+    emun: ['ADMIN_ROLE', 'USER_ROLE', 'SALE_ROLE']
   },
   img: {
     type: String,

@@ -1,10 +1,11 @@
 const { Router } = require('express');
 const {
-  login
+  login, googleSignIn
 } = require('../controllers/auth.controller');
-const { LoginDto } = require('../helpers/auth.dto');
+const { LoginDto, GoogleDto } = require('../helpers/auth.dto');
 const router = Router();
 
 router.post('/login', LoginDto(), login);
+router.post('/google', GoogleDto(), googleSignIn);
 
 module.exports = router;

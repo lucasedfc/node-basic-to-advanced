@@ -10,6 +10,14 @@ const LoginDto = () => {
   ];
 };
 
+const GoogleDto = () => {
+  return [
+    body('id_token', 'id_token is required').not().isEmpty(),
+    validate
+  ];
+};
+
 module.exports = {
-  LoginDto
+  LoginDto,
+  GoogleDto
 };
