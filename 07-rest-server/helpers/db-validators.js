@@ -33,11 +33,26 @@ const isValidRole = async (role = '') => {
     if (!existProduct) {
       throw new Error(`Product with id: ${id} is missing`);
     }
-  } 
+  }
+
+  /*
+  Valid Collections
+  */
+
+  const validCollections = (collection = '', collections = []) => {
+    const valid = collections.includes(collection);
+    if (!valid) {
+      throw new Error(`Collection ${collection} is not permitted, ${collections}` );
+    }
+
+    return true;
+  }
+
   module.exports = {
     isValidRole,
     emailExists,
     userByIdExists,
     categoryByIdExists,
-    productByIdExists
+    productByIdExists,
+    validCollections
   }

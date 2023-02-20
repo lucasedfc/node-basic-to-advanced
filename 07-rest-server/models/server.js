@@ -5,7 +5,9 @@ const authRoutes = require('../routes/auth.routes');
 const categoryRoutes = require('../routes/categories.routes');
 const productRoutes = require('../routes/products.routes');
 const searchRoutes = require('../routes/search.routes');
+const uploadRoutes = require('../routes/upload.routes');
 const { dbConnection } = require('../database/config');
+const fileUpload = require('express-fileupload');
 
 class Server {
   constructor() {
@@ -16,7 +18,8 @@ class Server {
       user: '/api/users',
       category: '/api/categories',
       products: '/api/products',
-      search: '/api/search'
+      search: '/api/search',
+      uploads: '/api/uploads'
     }
 
     //! DB Connection
@@ -35,6 +38,13 @@ class Server {
     this.app.use(express.json());
     // Public folder
     this.app.use(express.static('public'));
+
+    // File uploads
+    this.app.use(fileUpload({
+      useTempFiles : true,
+      tempFileDir : '/tmp/',
+      createParentPath: true
+    }));
   }
 
   async connectDB() {
@@ -47,6 +57,7 @@ class Server {
     this.app.use(this.paths.category, categoryRoutes);
     this.app.use(this.paths.products, productRoutes);
     this.app.use(this.paths.search, searchRoutes);
+    this.app.use(this.paths.uploads, uploadRoutes);
   }
 
   listen() {
