@@ -16,7 +16,7 @@ socket.on('connect', function() {
     console.log('Connected to the server');
 
     socket.emit('loginChat', user, (resp) => {
-        console.log('Users connected', resp);
+        renderUsers(resp);
     } )
 });
 
@@ -27,26 +27,18 @@ socket.on('disconnect', function() {
 
 });
 
-
-// Emit Data to all users
-// socket.emit('createMessage', {
-//     usuario: 'Luke',
-//     mensaje: 'Hi there'
-// }, function(resp) {
-//     console.log('server response: ', resp);
-// });
-
 // Listen events
 socket.on('createMessage', (message) => {
 
-    console.log('Server:', message);
+    renderMessages(message, false);
+    scrollBottom();
 
 });
 
 // connect or disconnect events, receive all users
 socket.on('listOfUsers', (users) => {
 
-    console.log('Server:', users);
+    renderUsers(users);
 
 });
 
