@@ -5,8 +5,8 @@
 Opciones:
       --help     Show help                                        [booleano]
       --version  Show number of version                            [booleano]
-  -b, --base     The base of the multiplication table       [número] [requerido]
-  -s, --show     Show the table on the console       [booleano] [defecto: false]
-  -l, --limit    Number for the end of the table          [número] [defecto: 10]
+  -b, --base     The base of the multiplication table       [number] [required]
+  -s, --show     Show the table on the console       [booleano] [default: false]
+  -l, --limit    Number for the end of the table          [number] [default: 10]
 
 ```

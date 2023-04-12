@@ -1,3 +1,9 @@
 # Node - Fundamentals 
 
-Resume of arrow functions, async/await, callback hell, destructuring, promises, template string
+
+- [x] Arrow Functions
+- [x] Async/Await
+- [x] Callback Hell
+- [x] Destructiring
+- [x] Promises
+- [x] Template String

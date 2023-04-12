@@ -9,6 +9,3 @@
 - [x] File Upload (Cloudinary)
 - [x] Google Sign-In
 - [x] Request validation (express-validator)
-
-
-#
