@@ -1,9 +1,3 @@
-# Notas:
+# Node - Chat Server V2
 
-Este es un pequeño servidor de express listo para ejecutarse y servir la carpeta public en la web.
-
-Recuerden que deben de reconstruir los módulos de node con el comando
-
-```
-npm install
-```
+Chat Server with Socket Server with dummy login to specify the user and the room.

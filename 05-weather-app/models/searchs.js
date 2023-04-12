@@ -53,7 +53,6 @@ class Searchs {
         lat: place.center[1],
       }));
 
-      return [];
     } catch (error) {
       return [];
     }

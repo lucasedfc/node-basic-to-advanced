@@ -47,7 +47,7 @@ class Server {
 
     listen() {
         this.server.listen( this.port, () => {
-            console.info('Servidor corriendo en puerto', this.port );
+            console.info('Server running on port:', this.port );
         });
     }
 
